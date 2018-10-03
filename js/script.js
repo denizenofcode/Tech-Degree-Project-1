@@ -19,7 +19,8 @@ var quotes = [
     source: "Obi-Wan",
     citation: "Attack of the Clones",
   },
-  { quote: "I won’t fail you. I’m not afraid. You will be. You… will… be.",
+  { quote:  'I won’t fail you. I’m not afraid.' +
+            'You will be. You… will… be.',
     source: "Yoda & Luke Skywalker",
     citation: "The Empire Strikes Back",
   }
@@ -34,7 +35,6 @@ function getRandomQuote(array) {
 // Create the printQuote funtion and name it printQuote
 function printQuote() {
   var selectedQuote = getRandomQuote(quotes);
-  var outputString =  "";
   var outPutString =  '<p class="quote">' + selectedQuote.quote + '</p>' +
                       '<p class="source">' + selectedQuote.source;
   if ('citation' in selectedQuote) {
@@ -44,6 +44,7 @@ function printQuote() {
     outPutString += '<span class="year">' + selectedQuote.year + '</span>' +
     '</p>';
   }
+  document.getElementById('quote-box').innerHTML = outPutString;
 }
 
 // This event listener will respond to "Show another quote" button clicks
