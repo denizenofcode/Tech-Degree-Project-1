@@ -38,12 +38,12 @@ function printQuote() {
   var outPutString =  '<p class="quote">' + selectedQuote.quote + '</p>' +
                       '<p class="source">' + selectedQuote.source;
   if ('citation' in selectedQuote) {
-    outPutString =+ '<span class="citation">' + selectedQuote.citation + '</span>'
+    outPutString += '<span class="citation">' + selectedQuote.citation + '</span>';
   }
   if ('year' in selectedQuote) {
     outPutString += '<span class="year">' + selectedQuote.year + '</span>' +
-    '</p>'
-  };
+    '</p>';
+  }
 }
 
 // This event listener will respond to "Show another quote" button clicks
