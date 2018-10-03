@@ -47,8 +47,7 @@ function randomColor(){
         //Generate a random hex value between #000000 and #ffffff.
         var hexColor = '#'+Math.floor(Math.random()*16777215).toString(16);
         document.body.style.backgroundColor = hexColor;
-      };
-
+      }
 
 // Create the printQuote function and name it printQuote.
 function printQuote() {
@@ -73,7 +72,7 @@ function printQuote() {
   randomColor();
 }
 
-// Repeat with the interval of 5 seconds.
+// Repeat with the interval of 5000 milliseconds.
 var timerId = setInterval(() => printQuote(), 5000);
 // This event listener will respond to "Show another quote" button clicks.
 // When user clicks anywhere on the button, the "printQuote" function is called.
