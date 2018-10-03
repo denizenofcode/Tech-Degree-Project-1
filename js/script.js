@@ -5,7 +5,6 @@ var quotes = [
   { quote: "Remember…the Force will be with you, always.",
     source: "Obi Wan Kenobi",
     citation: "A New Hope",
-    year: ""
   },
   { quote: "Traveling through hyperspace aint like dusting crops, farm boy.",
     source: "Han Solo",
@@ -15,17 +14,14 @@ var quotes = [
   { quote: "Fear is the path to the dark side.",
     source: "Yoda",
     citation: "The Phantom Menace",
-    year: ""
   },
   { quote: "Be mindful of your thoughts Anakin. They’ll betray you.",
     source: "Obi-Wan",
     citation: "Attack of the Clones",
-    year: ""
   },
   { quote: "I won’t fail you. I’m not afraid. You will be. You… will… be.",
     source: "Yoda & Luke Skywalker",
     citation: "The Empire Strikes Back",
-    year: ""
   }
 ];
 
@@ -40,10 +36,14 @@ function printQuote() {
   var selectedQuote = getRandomQuote(quotes);
   var outputString =  "";
   var outPutString =  '<p class="quote">' + selectedQuote.quote + '</p>' +
-                      '<p class="source">' + selectedQuote.source +
-                      '<span class="citation">' + selectedQuote.citation + '</span>' +
-                      '<span class="year">' + selectedQuote.year + '</span>' +
-                      '</p>';
+                      '<p class="source">' + selectedQuote.source;
+  if ('citation' in selectedQuote) {
+    outPutString =+ '<span class="citation">' + selectedQuote.citation + '</span>'
+  }
+  if ('year' in selectedQuote) {
+    outPutString += '<span class="year">' + selectedQuote.year + '</span>' +
+    '</p>'
+  };
 }
 
 // This event listener will respond to "Show another quote" button clicks
