@@ -10,7 +10,7 @@ var quotes = [
   { quote: "Traveling through hyperspace aint like dusting crops, farm boy.",
     source: "Han Solo",
     citation: "A New Hope",
-    year: ""
+    year: "0ABY"
   },
   { quote: "Fear is the path to the dark side.",
     source: "Yoda",
@@ -37,9 +37,14 @@ function getRandomQuote(array) {
 
 // Create the printQuote funtion and name it printQuote
 function printQuote() {
-  
+  var selectedQuote = getRandomQuote(quotes);
+  var outputString =  "";
+  var outPutString =  '<p class="quote">' + selectedQuote.quote + '</p>' +
+                      '<p class="source">' + selectedQuote.source +
+                      '<span class="citation">' + selectedQuote.citation + '</span>' +
+                      '<span class="year">' + selectedQuote.year + '</span>' +
+                      '</p>';
 }
-
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
